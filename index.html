@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rudranil Dutta · Marketing Portfolio</title>
+<meta name="description" content="The marketing portfolio of Rudranil Dutta. Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
+<meta name="theme-color" content="#FBF8F0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rudranil Dutta · Marketing Portfolio">
+<meta property="og:description" content="The marketing portfolio of Rudranil Dutta. Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
+<meta property="og:image" content="assets/hero-banner.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rudranil Dutta · Marketing Portfolio">
+<meta name="twitter:description" content="The marketing portfolio of Rudranil Dutta. Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #FDF7E7; }
+  .nav-desktop { display: flex; gap: 12px; }
+  .nav-hamburger { display: none; }
+  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px 40px; }
+  .about-row { display: flex; gap: clamp(28px, 5vw, 56px); align-items: flex-start; }
+  .hero-name { font-size: clamp(20px, 5.2vw, 56px); }
+  .hero-tag { font-size: clamp(11px, 2.4vw, 21px); }
+  @media (max-width: 760px) {
+    .nav-desktop { display: none; }
+    .nav-hamburger { display: flex; }
+    .work-grid { grid-template-columns: 1fr; gap: 34px; }
+    .about-row { flex-direction: column; align-items: center; text-align: left; }
+  }
+  .work-card { transition: transform .35s ease; }
+  .work-card:hover { transform: translateY(-7px) scale(1.025); }
+</style>
+</head>
+<body>
+<div style="background:#FDF7E7;color:#1A1714;font-family:'Libre Caslon Text',Georgia,serif;min-height:100vh;">
+
+  <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="inkFill" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="11" stitchTiles="stitch" result="noise"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap>
+        <feGaussianBlur in="disp" stdDeviation="0.5"></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- header -->
+  <header style="position:sticky;top:0;z-index:40;background:#FDF7E7;border-bottom:1px solid rgba(26,23,20,0.85);padding:16px clamp(20px,4vw,40px);">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.4vw,22px);font-weight:700;">Marketing Portfolio</div>
+      <nav class="nav-desktop">
+        <a href="#about" data-target="about" style="display:flex;align-items:center;justify-content:center;width:158px;height:40px;border:1.5px solid #1A1714;border-radius:13px 10px 14px 9px / 9px 14px 10px 13px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:15px;letter-spacing:0.2px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">About</a>
+        <a href="#work" data-target="work" style="display:flex;align-items:center;justify-content:center;width:158px;height:40px;border:1.5px solid #1A1714;border-radius:10px 14px 9px 13px / 13px 9px 14px 10px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:15px;letter-spacing:0.2px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Work</a>
+        <a href="#contact" data-target="contact" style="display:flex;align-items:center;justify-content:center;width:158px;height:40px;border:1.5px solid #1A1714;border-radius:14px 9px 13px 10px / 10px 13px 9px 14px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:15px;letter-spacing:0.2px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Contact</a>
+      </nav>
+      <button id="navToggle" aria-expanded="false" class="nav-hamburger" aria-label="Open menu" style="width:42px;height:42px;border:1.5px solid #1A1714;border-radius:11px 9px 12px 8px / 8px 12px 9px 11px;background:transparent;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0;">
+        <span style="width:18px;height:1.6px;background:#1A1714;display:block;"></span>
+        <span style="width:18px;height:1.6px;background:#1A1714;display:block;"></span>
+        <span style="width:18px;height:1.6px;background:#1A1714;display:block;"></span>
+      </button>
+    </div>
+    
+      <nav id="mobileNav" style="display:none;flex-direction:column;gap:10px;padding-top:16px;">
+        <a href="#about" data-target="about" style="display:flex;align-items:center;justify-content:center;height:44px;border:1.5px solid #1A1714;border-radius:13px 10px 14px 9px / 9px 14px 10px 13px;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:16px;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">About</a>
+        <a href="#work" data-target="work" style="display:flex;align-items:center;justify-content:center;height:44px;border:1.5px solid #1A1714;border-radius:10px 14px 9px 13px / 13px 9px 14px 10px;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:16px;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Work</a>
+        <a href="#contact" data-target="contact" style="display:flex;align-items:center;justify-content:center;height:44px;border:1.5px solid #1A1714;border-radius:14px 9px 13px 10px / 10px 13px 9px 14px;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:16px;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Contact</a>
+      </nav>
+    
+  </header>
+
+  <!-- hero -->
+  <section>
+    <div style="position:relative;width:100%;">
+      <img src="assets/hero-banner.webp" alt="Watercolour banner of a man moving a colourful queen forward across a chessboard, with empty ivory paper on the right" style="display:block;width:100%;height:auto;"/>
+      <div style="position:absolute;top:0;right:0;height:100%;width:46%;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(12px,3.6vw,52px) 0 4px;z-index:2;">
+        <h1 class="hero-name" style="margin:0;font-family:'Playfair Display',serif;font-weight:800;line-height:1.03;letter-spacing:-0.5px;">Rudranil Dutta</h1>
+        <p class="hero-tag" style="margin:clamp(7px,1.4vw,16px) 0 0;font-family:'Libre Caslon Text',serif;font-style:italic;line-height:1.34;color:rgba(26,23,20,0.78);">Strategy backed, Customer Obsessed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section data-sec="about" style="padding:clamp(46px,6vw,74px) clamp(22px,6vw,64px);border-top:1px solid rgba(26,23,20,0.85);">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:4px;color:rgba(26,23,20,0.6);margin-bottom:clamp(24px,3vw,34px);">ABOUT</div>
+    <div class="about-row">
+      <div style="flex:0 0 auto;width:clamp(134px,15vw,172px);height:clamp(134px,15vw,172px);border-radius:50%;overflow:hidden;border:1.5px solid #1A1714;">
+        <img src="assets/headshot.webp" alt="Portrait of Rudranil Dutta" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;"/>
+      </div>
+      <p style="margin:0;max-width:660px;font-family:'Libre Caslon Text',serif;font-size:clamp(17px,1.9vw,19px);line-height:1.72;">
+        <span style="float:left;font-family:'Playfair Display',serif;font-size:clamp(58px,7vw,72px);line-height:0.72;font-weight:700;padding:8px 12px 0 0;">M</span>BA in Marketing &amp; Communications, with 4+ years in risk analysis behind me, where I got rather good at using data, consumer insight and cross-functional collaboration to steer business decisions. I'm now bringing those strengths to marketing, applying the same structured thinking to strategy, campaign direction and brand positioning. A curious, diligent and quick study, I work data-first and consumer-centric, and I adapt fast, roll up my sleeves, and deliver marketing that actually moves the numbers.
+      </p>
+    </div>
+  </section>
+
+  <!-- work -->
+  <section data-sec="work" style="padding:clamp(42px,5vw,64px) clamp(22px,6vw,64px) clamp(56px,7vw,76px);border-top:1px solid rgba(26,23,20,0.85);">
+    <div style="display:flex;align-items:center;gap:clamp(16px,3vw,26px);margin-bottom:clamp(34px,5vw,50px);">
+      <div style="flex:1;height:1px;background:rgba(26,23,20,0.85);"></div>
+      <h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,4vw,36px);white-space:nowrap;">Selected Work</h2>
+      <div style="flex:1;height:1px;background:rgba(26,23,20,0.85);"></div>
+    </div>
+    <div class="work-grid">
+      <a class="work-card" href="Regional-Palate-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
+  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
+    <img src="assets/cs-fmcg.webp" alt="Watercolour of a hand straining a colander of numbers into falling binary" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+  </div>
+  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">FMCG Research</div>
+  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">What a regional palate really wants.</div>
+  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">RESEARCH &amp; INSIGHT</div>
+</a>
+<a class="work-card" href="Ramayana-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
+  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
+    <img src="assets/cs-ramayana.webp" alt="Watercolour illustration for the Ramayana campaign" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+  </div>
+  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Ramayana</div>
+  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">Marketing India's greatest epic.</div>
+  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">CAMPAIGN &amp; MEDIA</div>
+</a>
+<a class="work-card" href="Comet-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
+  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
+    <img src="assets/cs-comet.webp" alt="Watercolour illustration of the Comet shoe campaign" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+  </div>
+  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Comet</div>
+  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">A year's media plan for a shoe.</div>
+  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">PERFORMANCE</div>
+</a>
+<a class="work-card" href="Absolut-Truth-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
+  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
+    <img src="assets/cs-absolut.webp" alt="Watercolour illustration for Absolut branded content" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+  </div>
+  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Absolut Truth</div>
+  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">The sell, hidden in the story.</div>
+  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">BRANDED CONTENT</div>
+</a>
+<a class="work-card" href="Crumbrella-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
+  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
+    <img src="assets/cs-crumbrella.webp" alt="Watercolour illustration of the Crumbrella concept" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+  </div>
+  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Crumbrella</div>
+  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">One order, two people to win.</div>
+  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">EMAIL &amp; CRM</div>
+</a>
+<a class="work-card" href="District-Plot-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
+  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
+    <img src="assets/cs-district.webp" alt="Watercolour illustration for District: The Plot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+  </div>
+  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">District: The Plot</div>
+  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">Changing habits, not fighting them.</div>
+  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">PRODUCT THINKING</div>
+</a>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section data-sec="contact" style="padding:clamp(50px,7vw,76px) clamp(22px,6vw,64px);border-top:1px solid rgba(26,23,20,0.85);text-align:center;">
+    <h2 style="margin:0 0 clamp(28px,4vw,36px);font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(28px,4vw,34px);">Get in touch</h2>
+    <div style="display:flex;gap:clamp(14px,2vw,22px);justify-content:center;flex-wrap:wrap;">
+      <a href="mailto:rudranil06@gmail.com" style="display:flex;align-items:center;justify-content:center;width:188px;max-width:100%;height:52px;border:1.5px solid #1A1714;border-radius:14px 10px 13px 9px / 9px 13px 10px 14px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:17px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Email me</a>
+      <a href="Rudranil-Dutta-CV.pdf" download target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:188px;max-width:100%;height:52px;border:1.5px solid #1A1714;border-radius:9px 13px 10px 14px / 14px 10px 13px 9px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:17px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Download CV</a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="padding:30px;border-top:1px solid rgba(26,23,20,0.85);text-align:center;">
+    <div style="font-family:'Libre Caslon Text',serif;font-style:italic;font-size:14px;color:rgba(26,23,20,0.7);">&copy; Rudranil Dutta 2026</div>
+  </footer>
+
+</div>
+<script src="assets/site.js"></script>
+<script src="assets/home.js"></script>
+</body>
+</html>

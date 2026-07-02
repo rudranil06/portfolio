@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comet Media Plan · Rudranil Dutta</title>
+<meta name="description" content="The working media plan for Comet. Sourced assumptions, a live outcome model, budget by funnel stage and a month-by-month flighting heatmap.">
+<meta name="theme-color" content="#FBF8F0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comet Media Plan · Rudranil Dutta">
+<meta property="og:description" content="The working media plan for Comet. Sourced assumptions, a live outcome model, budget by funnel stage and a month-by-month flighting heatmap.">
+<meta property="og:image" content="assets/cs-comet.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comet Media Plan · Rudranil Dutta">
+<meta name="twitter:description" content="The working media plan for Comet. Sourced assumptions, a live outcome model, budget by funnel stage and a month-by-month flighting heatmap.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #FBF8F0; }
+  .cr-link { color: #1A1714; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .mt { width: 100%; border-collapse: collapse; margin: 14px 0 4px; font-size: 14px; font-family: 'Libre Caslon Text', Georgia, serif; }
+  .mt th, .mt td { text-align: left; vertical-align: top; padding: 9px 11px; border-bottom: 1px solid rgba(26,23,20,0.14); line-height: 1.5; }
+  .mt thead th { border-bottom: 1px solid rgba(26,23,20,0.85); font-family: ui-monospace, Menlo, monospace; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(26,23,20,0.6); font-weight: 600; }
+  .mt td.num, .mt th.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .mt tr.total td { border-top: 1.5px solid #1A1714; border-bottom: none; font-weight: 700; }
+  .mt .src { font-size: 12.5px; color: rgba(26,23,20,0.55); }
+  .mt .src a { color: #1A1714; }
+  .formula { display: block; font-size: 10px; color: rgba(26,23,20,0.5); font-style: italic; text-transform: none; letter-spacing: 0; margin-top: 2px; }
+  .tag { display: inline-block; font-family: ui-monospace, Menlo, monospace; font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border: 1px solid rgba(26,23,20,0.5); border-radius: 20px; margin-left: 6px; color: rgba(26,23,20,0.7); }
+  .pill { display: inline-block; font-family: ui-monospace, Menlo, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 11px; border: 1px solid #1A1714; border-radius: 6px; }
+  input.live { width: 104px; font-family: 'Libre Caslon Text', Georgia, serif; font-size: 15px; padding: 6px 8px; border: 1px solid rgba(26,23,20,0.4); border-radius: 6px; text-align: right; background: #FBF8F0; color: #1A1714; }
+  input.live:focus { outline: 2px solid #1A1714; border-color: #1A1714; }
+  .live-out { border: 1px solid rgba(26,23,20,0.22); border-radius: 4px; padding: 18px; margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(158px, 1fr)); gap: 14px; }
+  .live-out .stat { border: 1px solid rgba(26,23,20,0.18); border-radius: 4px; padding: 13px 15px; }
+  .live-out .lab { font-family: ui-monospace, Menlo, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(26,23,20,0.6); }
+  .live-out .val { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; margin-top: 4px; }
+  .bar { height: 10px; border-radius: 5px; background: rgba(26,23,20,0.12); overflow: hidden; }
+  .bar > span { display: block; height: 100%; background: #1A1714; }
+  .placeholder { border: 1px dashed rgba(26,23,20,0.4); border-radius: 6px; padding: 18px; color: rgba(26,23,20,0.6); font-style: italic; font-size: 14.5px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div style="background:#FBF8F0;color:#1A1714;font-family:'Libre Caslon Text',Georgia,serif;min-height:100vh;">
+
+  <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="inkFill" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="11" stitchTiles="stitch" result="noise"></feTurbulence>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap>
+        <feGaussianBlur in="disp" stdDeviation="0.5"></feGaussianBlur>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- masthead -->
+  <header style="position:sticky;top:0;z-index:40;background:#FBF8F0;border-bottom:1px solid rgba(26,23,20,0.85);padding:16px clamp(20px,5vw,54px);display:flex;align-items:center;justify-content:space-between;gap:16px;">
+    <a href="index.html" style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.4vw,22px);font-weight:700;color:#1A1714;text-decoration:none;">Marketing Portfolio</a>
+    <a href="index.html#work" style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid #1A1714;border-radius:13px 10px 14px 9px / 9px 14px 10px 13px;padding:8px 16px;font-family:'Libre Caslon Text',serif;font-size:14px;color:#1A1714;text-decoration:none;white-space:nowrap;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;">&larr; Back to work</a>
+  </header>
+
+  <article style="max-width:1000px;margin:0 auto;padding:clamp(30px,4vw,48px) clamp(20px,5vw,40px) 20px;">
+
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Comet &middot; Annual media plan</div>
+    <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(29px,4.8vw,48px);line-height:1.07;letter-spacing:-0.01em;margin:14px 0 0;">Earn a movement, not an ad. Turn &#8377;29 Cr into &#8377;100 Cr.</h1>
+    <p style="font-family:'Libre Caslon Text',serif;font-style:italic;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:rgba(26,23,20,0.72);margin:16px 0 0;max-width:760px;">A culture-led year that deploys &#8377;35 Cr of a &#8377;50 Cr war chest for a blended ~2.8x return, flighted to the festive demand peak.</p>
+    <p style="font-size:14px;color:rgba(26,23,20,0.6);margin:10px 0 0;">Financial year Apr 2027 to Mar 2028 &nbsp;|&nbsp; deploy &#8377;35 Cr, reserve &#8377;15 Cr &nbsp;|&nbsp; built to a reusable agency standard</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:10px 26px;border-top:1px solid rgba(26,23,20,0.85);border-bottom:1px solid rgba(26,23,20,0.85);padding:16px 0;margin:24px 0 0;font-size:15px;color:rgba(26,23,20,0.82);">
+      <span><b style="color:#1A1714;font-weight:700;">Deploy</b> &#8377;35 Cr</span>
+      <span><b style="color:#1A1714;font-weight:700;">Reserve</b> &#8377;15 Cr</span>
+      <span><b style="color:#1A1714;font-weight:700;">Revenue target</b> &#8377;85 Cr base / &#8377;100 Cr stretch</span>
+      <span><b style="color:#1A1714;font-weight:700;">Blended ROAS</b> ~2.8x</span>
+      <span><b style="color:#1A1714;font-weight:700;">North star</b> share of search</span>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:22px 0 0;">
+      <a href="Comet-Annual-Media-Plan-FY27-28.xlsx" download style="display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1.5px solid #1A1714;border-radius:14px 10px 13px 9px / 9px 13px 10px 14px;padding:13px 26px;font-family:'Libre Caslon Text',serif;font-size:16px;color:#1A1714;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;">&darr;&ensp;Download the spreadsheet</a>
+      <a href="Comet-Case-Study.html" class="cr-link" style="font-size:15px;font-style:italic;">&larr; Read the case study</a>
+    </div>
+
+    <!-- Sheet 01 -->
+    <section style="border-top:1px solid rgba(26,23,20,0.85);margin-top:36px;padding-top:20px;">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Sheet 01 &middot; Assumptions &amp; benchmarks</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.7vw,25px);font-weight:700;margin:6px 0 0;">The inputs everything else is built on</h2>
+      <p style="font-size:16.5px;line-height:1.7;margin:12px 0;">Every derived number in this plan traces back to the inputs below. They are marked <span class="tag">input</span> (a given or a benchmark, with its source) so anyone can follow the maths and challenge a number rather than take it on faith. Change the four live figures and the outcome model further down recalculates itself.</p>
+      <div style="overflow-x:auto;">
+        <table class="mt">
+          <thead><tr><th>Input</th><th class="num">Value</th><th>Source / rationale</th></tr></thead>
+          <tbody>
+            <tr><td>Comet FY25 revenue (baseline)</td><td class="num">&#8377;29.1 Cr</td><td class="src">Audited; up ~4x from &#8377;7.3 Cr FY24. <a class="cr-link" href="https://www.indianretailer.com/news/comet-accelerates-growth-303-pc-revenue-jump-fy25" target="_blank" rel="noopener">Indian Retailer</a></td></tr>
+            <tr><td>Pairs sold now (derived from above)</td><td class="num">~65,000 / yr</td><td class="src">Revenue &#247; AOV. Sized off audited revenue, not a PR "12k/month" figure that did not reconcile.</td></tr>
+            <tr><td>Average order value (AOV)</td><td class="num">&#8377;4,500</td><td class="src">Real Comet pricing &#8377;4,299 to &#8377;5,999. <a class="cr-link" href="https://www.wearcomet.com/collections/men-sneakers" target="_blank" rel="noopener">wearcomet.com</a></td></tr>
+            <tr><td>Site conversion rate</td><td class="num">1.5%</td><td class="src">India D2C footwear benchmark (directional).</td></tr>
+            <tr><td>Blended performance CPC</td><td class="num">&#8377;14</td><td class="src">Blended across Search, Meta, Shopping (directional benchmark).</td></tr>
+            <tr><td>Total budget / deploy / reserve</td><td class="num">&#8377;50 / 35 / 15 Cr</td><td class="src">Brief sets &#8377;50 Cr; we deploy &#8377;35 Cr and hold &#8377;15 Cr as fuel-on-success.</td></tr>
+            <tr><td>Gross-up</td><td class="num">+18% GST</td><td class="src">All figures are net media; gross = net + 18% GST.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:rgba(26,23,20,0.6);margin:12px 0 0;">Honesty flag, stated rather than hidden: the conversion rate and CPC are category benchmarks, not bought data. The model below shows how sensitive the result is to them.</p>
+    </section>
+
+    <!-- Sheet 02 -->
+    <section style="border-top:1px solid rgba(26,23,20,0.85);margin-top:30px;padding-top:20px;">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Sheet 02 &middot; Outcome model</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.7vw,25px);font-weight:700;margin:6px 0 0;">What &#8377;35 Cr is expected to return</h2>
+      <p style="font-size:16.5px;line-height:1.7;margin:12px 0;">The funnel, carried all the way to rupees. Headers show the formula; the figures below recompute live from the Assumptions sheet. This models the <b style="font-weight:700;">performance pot only</b>; the report, parties, OOH, PR and organic add a halo on top.</p>
+      <div style="overflow-x:auto;">
+        <table class="mt" style="max-width:560px;">
+          <tbody>
+            <tr><td>Performance spend (&#8377; Cr) <span class="tag">input</span></td><td class="num"><input class="live" id="i_perf" type="number" step="0.5" value="20"/></td></tr>
+            <tr><td>Blended CPC (&#8377;) <span class="tag">input</span></td><td class="num"><input class="live" id="i_cpc" type="number" step="1" value="14"/></td></tr>
+            <tr><td>Conversion rate (%) <span class="tag">input</span></td><td class="num"><input class="live" id="i_cr" type="number" step="0.1" value="1.5"/></td></tr>
+            <tr><td>AOV (&#8377;) <span class="tag">input</span></td><td class="num"><input class="live" id="i_aov" type="number" step="100" value="4500"/></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="live-out">
+        <div class="stat"><div class="lab">Site visits <span class="formula">= spend &#247; CPC</span></div><div class="val" id="o_visits">&#8211;</div></div>
+        <div class="stat"><div class="lab">Orders <span class="formula">= visits &#215; CR</span></div><div class="val" id="o_orders">&#8211;</div></div>
+        <div class="stat"><div class="lab">Performance revenue <span class="formula">= orders &#215; AOV</span></div><div class="val" id="o_rev">&#8211;</div></div>
+        <div class="stat"><div class="lab">Performance ROAS <span class="formula">= revenue &#247; spend</span></div><div class="val" id="o_roas">&#8211;</div></div>
+        <div class="stat"><div class="lab">Fully-loaded CAC <span class="formula">= &#8377;35 Cr &#247; orders</span></div><div class="val" id="o_cac">&#8211;</div></div>
+        <div class="stat"><div class="lab">Blended ROAS <span class="formula">= &#8377;100 Cr &#247; &#8377;35 Cr</span></div><div class="val">~2.8x</div></div>
+      </div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin:22px 0 4px;">Reconciliation: top-down vs bottom-up</h3>
+      <p style="font-size:16.5px;line-height:1.7;margin:8px 0;">The top-down ambition (&#8377;29 Cr to &#8377;100 Cr) and the bottom-up funnel meet in a range, not a single false-precise number:</p>
+      <div style="overflow-x:auto;">
+        <table class="mt">
+          <thead><tr><th>Scenario</th><th>CPC / CR</th><th class="num">Performance revenue</th><th>With earned + organic halo</th></tr></thead>
+          <tbody>
+            <tr><td>Conservative</td><td>&#8377;20 / 1.2%</td><td class="num">~&#8377;54 Cr</td><td>~&#8377;75-85 Cr</td></tr>
+            <tr><td>Base</td><td>&#8377;14 / 1.5%</td><td class="num">~&#8377;96 Cr</td><td>~&#8377;100 Cr</td></tr>
+            <tr><td>Optimistic</td><td>&#8377;11 / 1.8%</td><td class="num">~&#8377;130 Cr</td><td>&#8377;130 Cr+</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:rgba(26,23,20,0.6);margin:12px 0 0;">Plan to a <b style="font-weight:700;">&#8377;85 Cr base</b> and hold <b style="font-weight:700;">&#8377;100 Cr as the stretch</b>; the &#8377;15 Cr reserve is deployed mid-campaign only if the efficiency holds. CAC sits well under the &#8377;4,500 AOV, so acquisition is recovered on the first pair.</p>
+    </section>
+
+    <!-- Sheet 03 -->
+    <section style="border-top:1px solid rgba(26,23,20,0.85);margin-top:30px;padding-top:20px;">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Sheet 03 &middot; Investment summary</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.7vw,25px);font-weight:700;margin:6px 0 0;">Where the &#8377;35 Cr deploy goes</h2>
+      <p style="font-size:16.5px;line-height:1.7;margin:12px 0;">Read top-down before the detail. Earned and owned do the cheap reaching; paid concentrates on converting during the October to January buying peak.</p>
+      <div style="overflow-x:auto;">
+        <table class="mt">
+          <thead><tr><th>Investment</th><th class="num">Amount</th><th class="num">% of deploy</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td><span class="pill">Performance / conversion</span></td><td class="num">&#8377;20 Cr</td><td class="num">57%</td><td>The volume engine; harvests the festive-to-winter demand on the highest-intent channels (Search, Shopping, Meta conversion, Myntra, retargeting).</td></tr>
+            <tr><td><span class="pill">Brand amplification</span></td><td class="num">&#8377;6 Cr</td><td class="num">17%</td><td>Fuels the 6-week burst: YouTube and Meta reach, OTT pre-roll, the anamorphic OOH.</td></tr>
+            <tr><td><span class="pill">Productions (earned engine)</span></td><td class="num">&#8377;9 Cr</td><td class="num">26%</td><td>The report, brand film, parties, graffiti and OOH build, sessions, chip, influencers.</td></tr>
+            <tr class="total"><td>Total deploy</td><td class="num">&#8377;35 Cr</td><td class="num">100%</td><td>Plus &#8377;15 Cr held in reserve.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin:22px 0 4px;">The shape of it</h3>
+      <div style="overflow-x:auto;">
+        <table class="mt">
+          <tbody>
+            <tr><td style="width:210px;">Peak window (Oct-Jan)</td><td><div class="bar"><span style="width:62%;"></span></div></td><td class="num" style="width:80px;">~62%</td></tr>
+            <tr><td>Digital share</td><td><div class="bar"><span style="width:92%;"></span></div></td><td class="num">~92%</td></tr>
+            <tr><td>Earned + owned led (vs paid reach)</td><td><div class="bar"><span style="width:70%;"></span></div></td><td class="num">~70%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:rgba(26,23,20,0.6);margin:12px 0 0;">Gross-up: the &#8377;35 Cr is net media; at +18% GST the gross outlay is ~&#8377;41.3 Cr. Reserve excluded.</p>
+    </section>
+
+    <!-- Sheet 04 -->
+    <section style="border-top:1px solid rgba(26,23,20,0.85);margin-top:30px;padding-top:20px;">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Sheet 04 &middot; Budget by funnel stage</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.7vw,25px);font-weight:700;margin:6px 0 0;">The same money, read by funnel</h2>
+      <p style="font-size:16.5px;line-height:1.7;margin:12px 0;">Sheet 03 reads the budget by type; this reads it by what each rupee is trying to do. Detailed line items per quarter follow in the quarter sheets.</p>
+      <div style="overflow-x:auto;">
+        <table class="mt">
+          <thead><tr><th>Stage</th><th>What it buys</th><th class="num">Indicative spend</th></tr></thead>
+          <tbody>
+            <tr><td><b style="font-weight:700;">See</b> (awareness)</td><td>Report PR, brand film, anamorphic OOH, YouTube/OTT/Meta reach, the cyphers and graffiti</td><td class="num">~&#8377;10 Cr</td></tr>
+            <tr><td><b style="font-weight:700;">Think</b> (consideration)</td><td>Sessions and tracks, hunt content, influencer "real" stories, Apex storytelling, retargeting</td><td class="num">~&#8377;7 Cr</td></tr>
+            <tr><td><b style="font-weight:700;">Do</b> (conversion)</td><td>Search, Shopping/PMax, Meta conversion, Myntra, affiliate codes, the parties, Apex blitz</td><td class="num">~&#8377;14 Cr</td></tr>
+            <tr><td><b style="font-weight:700;">Care</b> (loyalty)</td><td>Chip-gated sessions, YouTube series, UGC, CRM, the Ahmedabad exhibition</td><td class="num">~&#8377;4 Cr</td></tr>
+            <tr class="total"><td>Total</td><td></td><td class="num">~&#8377;35 Cr</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Sheet 05 -->
+    <section style="border-top:1px solid rgba(26,23,20,0.85);margin-top:30px;padding-top:20px;">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Sheet 05 &middot; Flighting</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.7vw,25px);font-weight:700;margin:6px 0 0;">When each channel is live, and how hard</h2>
+      <p style="font-size:16.5px;line-height:1.7;margin:12px 0;">Channels down the side, the financial year across the top. The darker the cell, the more weight that channel carries that month. Read it once and you see the rhythm: a quiet build, a loud six-week burst in Sept-Oct, the conversion channels peaking through the festive-to-winter window, then loyalty in the Feb-Mar trough.</p>
+      <div style="overflow-x:auto;">
+        <div id="flight" style="font-size:11px;color:rgba(26,23,20,0.6);margin-top:6px;min-width:640px;"></div>
+      </div>
+      <p style="font-size:13px;color:rgba(26,23,20,0.6);margin-top:12px;" id="flightleg"></p>
+    </section>
+
+    <!-- Sheet 06 -->
+    <section style="border-top:1px solid rgba(26,23,20,0.85);margin-top:30px;padding-top:20px;">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(26,23,20,0.55);">Sheet 06 &middot; Budget by funnel stage</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(20px,2.7vw,25px);font-weight:700;margin:6px 0 0;">The &#8377;35 Cr, stacked by AIDA and split by quarter</h2>
+      <p style="font-size:16.5px;line-height:1.7;margin:12px 0;">Each line is tagged to a funnel stage and a buy type, with spend laid out across the four quarters. Every figure rolls up: stage subtotals, a grand total of &#8377;35 Cr, and quarter totals that show the deliberate back-loading to the festive peak (Q3).</p>
+      <div style="overflow-x:auto;">
+        <table class="mt">
+          <thead><tr>
+            <th>Platform / asset</th><th>Buy type</th>
+            <th class="num">Q1 <span style="font-weight:400;text-transform:none;">Apr-Jun</span></th>
+            <th class="num">Q2 <span style="font-weight:400;text-transform:none;">Jul-Sep</span></th>
+            <th class="num">Q3 <span style="font-weight:400;text-transform:none;">Oct-Dec</span></th>
+            <th class="num">Q4 <span style="font-weight:400;text-transform:none;">Jan-Mar</span></th>
+            <th class="num">Total <span class="formula">= sum of quarters</span></th>
+          </tr></thead>
+          <tbody>
+            <tr><td colspan="7"><span class="pill">SEE &middot; awareness</span></td></tr>
+            <tr><td>State of the Younion report + PR</td><td>Flat</td><td class="num">&#8211;</td><td class="num">0.5</td><td class="num">&#8211;</td><td class="num">&#8211;</td><td class="num">0.5</td></tr>
+            <tr><td>Brand film production + seeding</td><td>Flat</td><td class="num">&#8211;</td><td class="num">1.0</td><td class="num">&#8211;</td><td class="num">&#8211;</td><td class="num">1.0</td></tr>
+            <tr><td>OOH (anamorphic, graffiti, Ahmedabad expo)</td><td>Flat / CPD</td><td class="num">&#8211;</td><td class="num">0.7</td><td class="num">0.8</td><td class="num">0.5</td><td class="num">2.0</td></tr>
+            <tr><td>Reach media (YouTube, Meta, OTT)</td><td>CPV / CPM</td><td class="num">1.0</td><td class="num">2.0</td><td class="num">2.7</td><td class="num">0.8</td><td class="num">6.5</td></tr>
+            <tr class="total"><td>See subtotal</td><td></td><td class="num">1.0</td><td class="num">4.2</td><td class="num">3.5</td><td class="num">1.3</td><td class="num">10.0</td></tr>
+
+            <tr><td colspan="7"><span class="pill">THINK &middot; consideration</span></td></tr>
+            <tr><td>Sessions + content production</td><td>Flat</td><td class="num">&#8211;</td><td class="num">0.5</td><td class="num">0.7</td><td class="num">0.3</td><td class="num">1.5</td></tr>
+            <tr><td>Influencer / creator</td><td>Flat / CPM</td><td class="num">&#8211;</td><td class="num">0.8</td><td class="num">1.0</td><td class="num">0.2</td><td class="num">2.0</td></tr>
+            <tr><td>Consideration + retargeting media</td><td>CPC</td><td class="num">0.5</td><td class="num">1.2</td><td class="num">1.5</td><td class="num">0.3</td><td class="num">3.5</td></tr>
+            <tr class="total"><td>Think subtotal</td><td></td><td class="num">0.5</td><td class="num">2.5</td><td class="num">3.2</td><td class="num">0.8</td><td class="num">7.0</td></tr>
+
+            <tr><td colspan="7"><span class="pill">DO &middot; conversion</span></td></tr>
+            <tr><td>Search + Shopping / PMax</td><td>CPC</td><td class="num">0.3</td><td class="num">1.0</td><td class="num">2.7</td><td class="num">1.0</td><td class="num">5.0</td></tr>
+            <tr><td>Meta / IG conversion + DPA retargeting</td><td>CPC</td><td class="num">&#8211;</td><td class="num">1.0</td><td class="num">2.7</td><td class="num">0.8</td><td class="num">4.5</td></tr>
+            <tr><td>Myntra + marketplace</td><td>CPC / CPM</td><td class="num">&#8211;</td><td class="num">0.5</td><td class="num">1.6</td><td class="num">0.4</td><td class="num">2.5</td></tr>
+            <tr><td>Parties / events (demand-driving)</td><td>Flat</td><td class="num">&#8211;</td><td class="num">&#8211;</td><td class="num">1.7</td><td class="num">0.3</td><td class="num">2.0</td></tr>
+            <tr class="total"><td>Do subtotal</td><td></td><td class="num">0.3</td><td class="num">2.5</td><td class="num">8.7</td><td class="num">2.5</td><td class="num">14.0</td></tr>
+
+            <tr><td colspan="7"><span class="pill">CARE &middot; loyalty</span></td></tr>
+            <tr><td>Chip sessions + Boiler Room</td><td>Flat</td><td class="num">&#8211;</td><td class="num">&#8211;</td><td class="num">0.5</td><td class="num">1.0</td><td class="num">1.5</td></tr>
+            <tr><td>CRM / email + lifecycle retargeting</td><td>CPM</td><td class="num">&#8211;</td><td class="num">0.3</td><td class="num">0.6</td><td class="num">0.6</td><td class="num">1.5</td></tr>
+            <tr><td>Ahmedabad exhibition (loyalty leg)</td><td>Flat</td><td class="num">&#8211;</td><td class="num">&#8211;</td><td class="num">&#8211;</td><td class="num">1.0</td><td class="num">1.0</td></tr>
+            <tr class="total"><td>Care subtotal</td><td></td><td class="num">&#8211;</td><td class="num">0.3</td><td class="num">1.1</td><td class="num">2.6</td><td class="num">4.0</td></tr>
+
+            <tr class="total" style="background:rgba(26,23,20,0.045);"><td>Quarter totals</td><td></td><td class="num">1.8</td><td class="num">9.5</td><td class="num">16.5</td><td class="num">7.2</td><td class="num">35.0</td></tr>
+            <tr><td style="color:rgba(26,23,20,0.6);" colspan="2">Share of deploy</td><td class="num" style="color:rgba(26,23,20,0.6);">5%</td><td class="num" style="color:rgba(26,23,20,0.6);">27%</td><td class="num" style="color:rgba(26,23,20,0.6);">47%</td><td class="num" style="color:rgba(26,23,20,0.6);">21%</td><td class="num" style="color:rgba(26,23,20,0.6);">100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px;color:rgba(26,23,20,0.6);margin:12px 0 0;">All in &#8377; Cr, net media. Reserve &#8377;15 Cr held separately. Gross-up at +18% GST where the line is a paid media buy.</p>
+    </section>
+
+    
+
+    <div style="border-top:1px solid rgba(26,23,20,0.16);margin-top:30px;padding:22px 0 60px;">
+      <p style="font-size:13px;line-height:1.7;color:rgba(26,23,20,0.6);margin:0;">Built to Neil's reusable media-plan standard. Figures are net media unless stated; benchmark assumptions are flagged and sourced on Sheet 01. Companion to the <a class="cr-link" href="Comet-Case-Study.html">case study</a>.</p>
+    </div>
+
+  </article>
+
+</div>
+<script src="assets/site.js"></script>
+<script src="assets/comet.js"></script>
+</body>
+</html>
