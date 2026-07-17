@@ -184,7 +184,8 @@
   /* ---------- responsive ---------- */
   @media (max-width:900px){
     .hero{grid-template-columns:1fr;min-height:auto;padding-top:clamp(40px,10vw,70px);}
-    .hero-stage{min-height:300px;order:2;}
+    .hero-stage{min-height:min(54vh,440px);order:2;}
+    .stage-wrap{min-height:auto;}   /* let the cube stage set the height on mobile */
     .hero-copy{order:1;}
     .scroll-cue{display:none;}
     .about-grid{flex-direction:column;align-items:flex-start;gap:24px;}
@@ -372,9 +373,10 @@
   const stage = document.getElementById('cubeStage');
   if (!hero || !stage) return;
 
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const narrow  = matchMedia('(max-width: 900px)').matches;
-  const thin    = (navigator.hardwareConcurrency || 8) < 4;
+  // Phones get the cube too (capable ones). We no longer gate on screen width; we gate only on
+  // real signals that it'll be a bad time: reduced-motion, a genuinely weak CPU, data-saver, no WebGL.
+  const reduced  = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const thin     = (navigator.hardwareConcurrency || 8) < 4;   // very low-end devices only
   const saveData = navigator.connection && navigator.connection.saveData;
 
   let webgl = false;
@@ -383,10 +385,15 @@
     webgl = !!(c.getContext('webgl2') || c.getContext('webgl'));
   } catch (e) { webgl = false; }
 
-  if (reduced || narrow || thin || saveData || !webgl) return;   // three.js is never even fetched
+  if (reduced || thin || saveData || !webgl) return;   // otherwise three.js is never even fetched
 
   try {
     const { mountCube } = await import('./assets/cube.js');
+    // touch phrasing on touch devices
+    if (matchMedia('(pointer: coarse)').matches){
+      const hint = document.getElementById('cubeHint');
+      if (hint) hint.textContent = 'Drag to spin · tap a face to open it';
+    }
     // reveal the stage BEFORE mounting, or the cube measures a hidden, zero-size box
     hero.classList.remove('no-cube');
     // The stage stays aria-hidden on purpose. The cube is a mouse-only delight with no keyboard

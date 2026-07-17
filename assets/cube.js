@@ -136,7 +136,9 @@ export async function mountCube(stage, opts = {}){
   // kills the dust: additive blending accumulates almost no alpha, so the motes composite over
   // the page at ~4% opacity and vanish. Measured: 49 lit pixels transparent vs 502 opaque.
   const renderer = new THREE.WebGLRenderer({ antialias:true, powerPreference:'low-power' });
-  renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+  // phones pack huge pixel ratios (often 3); cap tighter there, the quality loss is invisible on a small screen and it saves a lot of fill
+  const coarse = matchMedia('(pointer: coarse)').matches;
+  renderer.setPixelRatio(Math.min(coarse ? 1.6 : 2, window.devicePixelRatio || 1));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.15;
