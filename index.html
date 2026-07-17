@@ -5,174 +5,401 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rudranil Dutta · Marketing Portfolio</title>
 <meta name="description" content="The marketing portfolio of Rudranil Dutta. Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
-<meta name="theme-color" content="#FBF8F0">
+<meta name="theme-color" content="#0B0A09">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rudranil Dutta · Marketing Portfolio">
-<meta property="og:description" content="The marketing portfolio of Rudranil Dutta. Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
-<meta property="og:image" content="assets/hero-banner.webp">
+<meta property="og:description" content="Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
+<meta property="og:image" content="assets/art/absolut.webp">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rudranil Dutta · Marketing Portfolio">
-<meta name="twitter:description" content="The marketing portfolio of Rudranil Dutta. Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
+<meta name="twitter:description" content="Strategy, consumer insight and campaign work across research, branded content, performance media and CRM.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Caslon+Text:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": { "three": "./assets/vendor/three.module.js" } }
+</script>
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { background: #FDF7E7; }
-  .nav-desktop { display: flex; gap: 12px; }
-  .nav-hamburger { display: none; }
-  .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 50px 40px; }
-  .about-row { display: flex; gap: clamp(28px, 5vw, 56px); align-items: flex-start; }
-  .hero-name { font-size: clamp(20px, 5.2vw, 56px); }
-  .hero-tag { font-size: clamp(11px, 2.4vw, 21px); }
-  @media (max-width: 760px) {
-    .nav-desktop { display: none; }
-    .nav-hamburger { display: flex; }
-    .work-grid { grid-template-columns: 1fr; gap: 34px; }
-    .about-row { flex-direction: column; align-items: center; text-align: left; }
+  :root{
+    --obsidian:#0B0A09;
+    --panel:#14110E;
+    --gold:#C9A24B;
+    --gold-lit:#E8C877;
+    --ivory:#F0E6D2;
+    --oxblood:#9E2B25;
+    --display:'Cormorant Garamond',Georgia,serif;
+    --body:'Libre Caslon Text',Georgia,serif;
+    --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+    --pad:clamp(22px,5vw,72px);
+    color-scheme:dark;   /* native scrollbars and controls follow the theme */
   }
-  .work-card { transition: transform .35s ease; }
-  .work-card:hover { transform: translateY(-7px) scale(1.025); }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--obsidian);color:var(--ivory);
+    font-family:var(--body);font-size:17px;line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:rgba(201,162,75,.18);
+  }
+  h1,h2,.row-title{text-wrap:balance;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--gold);color:var(--obsidian);padding:10px 16px;z-index:100;font-family:var(--mono);font-size:12px;}
+  .skip:focus{left:12px;top:12px;}
+  :focus-visible{outline:2px solid var(--gold-lit);outline-offset:3px;}
+
+  .kicker{font-family:var(--mono);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-lit);}
+  .rule{height:1px;background:linear-gradient(to right,rgba(201,162,75,.5),rgba(201,162,75,.06));border:0;margin:0;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:40;background:rgba(11,10,9,.82);
+    backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,75,.22);
+    padding:6px max(var(--pad),env(safe-area-inset-left)) 6px max(var(--pad),env(safe-area-inset-right));
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+  }
+  .wordmark{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.06em;text-decoration:none;}
+  .wordmark span{color:var(--gold);}
+  nav.top{display:flex;gap:clamp(16px,2.4vw,30px);}
+  nav.top a{font-family:var(--mono);font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;text-decoration:none;color:rgba(240,230,210,.72);transition:color .25s ease;display:inline-flex;align-items:center;min-height:44px;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:calc(100vh - 56px);display:grid;
+    grid-template-columns:1fr 1fr;align-items:center;gap:clamp(20px,4vw,50px);
+    padding:clamp(30px,5vw,60px) var(--pad);position:relative;overflow:hidden;
+  }
+  .hero-copy{max-width:620px;}
+  h1{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(46px,7.6vw,104px);line-height:.96;letter-spacing:-.018em;
+    margin:14px 0 0;color:var(--ivory);
+  }
+  .tagline{font-style:italic;font-size:clamp(16px,1.9vw,22px);color:rgba(240,230,210,.68);margin:18px 0 0;}
+  .hero-rule{width:72px;height:1px;background:var(--gold);margin:28px 0;}
+  .hero-intro{font-size:clamp(15px,1.6vw,17px);color:rgba(240,230,210,.62);max-width:44ch;margin:0;}
+
+  /* cube lands here in step 2 */
+  .hero-stage{
+    position:relative;min-height:min(58vh,460px);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .hero-stage::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 42%,rgba(201,162,75,.10) 0%,rgba(201,162,75,.03) 40%,transparent 70%);
+    pointer-events:none;
+  }
+  .stage-note{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:2.4px;text-transform:uppercase;
+    color:rgba(201,162,75,.42);border:1px dashed rgba(201,162,75,.28);
+    padding:14px 18px;border-radius:6px;text-align:center;line-height:1.9;
+  }
+  .stage-wrap{position:relative;display:flex;flex-direction:column;justify-content:center;min-height:min(62vh,500px);}
+  /* the hero collapses to type alone wherever the cube can't or shouldn't run */
+  .hero.no-cube .stage-wrap{display:none;}
+  .hero.no-cube{grid-template-columns:1fr;}
+
+  .cube-caption{
+    position:absolute;left:0;right:0;bottom:6px;z-index:3;pointer-events:none;
+    display:flex;flex-direction:column;align-items:center;gap:5px;
+    opacity:0;transform:translateY(6px);transition:opacity .3s ease,transform .3s ease;
+  }
+  .cube-caption.on{opacity:1;transform:none;}
+  .cube-caption.going .cc-name{color:var(--gold-lit);}
+  .cc-name{font-family:var(--display);font-weight:600;font-size:clamp(19px,2.3vw,26px);line-height:1.1;transition:color .3s ease;}
+  .cc-tag{font-family:var(--mono);font-size:9px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);}
+  .cc-skills{font-family:var(--mono);font-size:8.5px;letter-spacing:1.4px;color:rgba(240,230,210,.42);text-align:center;max-width:34ch;line-height:1.7;}
+  .cube-hint{
+    position:absolute;left:0;right:0;bottom:6px;z-index:2;text-align:center;pointer-events:none;
+    font-family:var(--mono);font-size:9px;letter-spacing:2.6px;text-transform:uppercase;
+    color:rgba(240,230,210,.3);transition:opacity .3s ease;
+  }
+  .cube-caption.on ~ .cube-hint{opacity:0;}
+  .scroll-cue{
+    position:absolute;left:var(--pad);bottom:26px;
+    font-family:var(--mono);font-size:9px;letter-spacing:2.6px;text-transform:uppercase;
+    color:rgba(240,230,210,.34);display:flex;align-items:center;gap:9px;
+  }
+  .scroll-cue::after{content:"";width:38px;height:1px;background:rgba(201,162,75,.45);}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(64px,9vw,120px) var(--pad);}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(30px,4vw,48px);flex-wrap:wrap;}
+  h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,4.4vw,50px);line-height:1.06;margin:0;letter-spacing:-.01em;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:flex;gap:clamp(28px,5vw,56px);align-items:flex-start;}
+  .portrait{
+    flex:0 0 auto;margin:0;overflow:hidden;border-radius:50%;
+    width:clamp(134px,15vw,172px);height:clamp(134px,15vw,172px);
+    border:1.5px solid var(--gold);
+    box-shadow:0 0 24px rgba(201,162,75,.09);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;}
+  .about-body{max-width:66ch;font-size:clamp(16px,1.7vw,18.5px);line-height:1.78;color:rgba(240,230,210,.84);}
+  .about-body::first-letter{
+    font-family:var(--display);font-weight:700;font-size:4.6em;line-height:.76;
+    float:left;padding:6px 14px 0 0;color:var(--gold);
+  }
+
+  /* ---------- work: story rows ---------- */
+  .work-rows{display:flex;flex-direction:column;gap:clamp(56px,8vw,110px);}
+  .row{
+    display:grid;grid-template-columns:1.32fr 1fr;align-items:center;
+    gap:clamp(22px,4vw,58px);text-decoration:none;color:inherit;
+  }
+  .row:nth-child(even){grid-template-columns:1fr 1.32fr;}
+  .row:nth-child(even) .row-art{order:2;}
+  .row:nth-child(even) .row-meta{order:1;}
+  .row-art{overflow:hidden;}
+  .row-art img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+  .row-title{
+    font-family:var(--display);font-weight:600;font-size:clamp(30px,4.6vw,54px);
+    line-height:1.02;letter-spacing:-.012em;margin:0;transition:color .3s ease;
+  }
+  .row-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold);margin-top:12px;}
+  .row-dek{font-style:italic;font-size:clamp(15px,1.7vw,19px);color:rgba(240,230,210,.62);margin:14px 0 0;}
+  .row-cta{
+    font-family:var(--mono);font-size:9.5px;letter-spacing:2.4px;text-transform:uppercase;
+    color:rgba(240,230,210,.5);margin-top:22px;display:inline-flex;align-items:center;gap:9px;transition:color .3s ease;
+  }
+  /* the rule grows via transform, not gap: animating gap relayouts the row every frame */
+  .row-cta::after{content:"";width:22px;height:1px;background:currentColor;transform-origin:left center;transition:transform .3s ease;}
+
+  /* ---------- contact ---------- */
+  .contact{text-align:center;}
+  .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:34px;}
+  .btn{
+    font-family:var(--mono);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;
+    text-decoration:none;color:var(--gold-lit);border:1px solid rgba(201,162,75,.55);
+    padding:16px 30px;border-radius:3px;background:transparent;
+    transition:background .35s ease,color .35s ease,border-color .35s ease;
+  }
+
+  footer{padding:34px var(--pad);border-top:1px solid rgba(201,162,75,.18);text-align:center;}
+  footer p{font-family:var(--mono);font-size:9.5px;letter-spacing:2.2px;color:rgba(240,230,210,.34);margin:0;text-transform:uppercase;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:auto;padding-top:clamp(40px,10vw,70px);}
+    .hero-stage{min-height:300px;order:2;}
+    .hero-copy{order:1;}
+    .scroll-cue{display:none;}
+    .about-grid{flex-direction:column;align-items:flex-start;gap:24px;}
+    .row,.row:nth-child(even){grid-template-columns:1fr;gap:18px;}
+    .row:nth-child(even) .row-art{order:0;}
+    .row:nth-child(even) .row-meta{order:1;}
+    nav.top{gap:14px;}
+    nav.top a{font-size:9.5px;letter-spacing:1.6px;}
+  }
+
+  /* Touch devices fire :hover on tap and leave it stuck. Gate every hover behind a real pointer. */
+  @media (hover: hover) and (pointer: fine){
+    nav.top a:hover{color:var(--gold-lit);}
+    .row:hover .row-art img{transform:scale(1.035);}
+    .row:hover .row-title{color:var(--gold-lit);}
+    .row:hover .row-cta{color:var(--gold-lit);}
+    .row:hover .row-cta::after{transform:scaleX(1.7);}
+    .btn:hover{background:var(--gold);color:var(--obsidian);border-color:var(--gold);}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none!important;animation:none!important;}
+  }
 </style>
 </head>
 <body>
-<div style="background:#FDF7E7;color:#1A1714;font-family:'Libre Caslon Text',Georgia,serif;min-height:100vh;">
+<a class="skip" href="#work">Skip to the work</a>
 
-  <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true" focusable="false">
-    <defs>
-      <filter id="inkFill" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="11" stitchTiles="stitch" result="noise"></feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap>
-        <feGaussianBlur in="disp" stdDeviation="0.5"></feGaussianBlur>
-      </filter>
-    </defs>
-  </svg>
+<header>
+  <a class="wordmark" href="#top">Rudranil Dutta<span>.</span></a>
+  <nav class="top" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- header -->
-  <header style="position:sticky;top:0;z-index:40;background:#FDF7E7;border-bottom:1px solid rgba(26,23,20,0.85);padding:16px clamp(20px,4vw,40px);">
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;">
-      <div style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.4vw,22px);font-weight:700;">Marketing Portfolio</div>
-      <nav class="nav-desktop">
-        <a href="#about" data-target="about" style="display:flex;align-items:center;justify-content:center;width:158px;height:40px;border:1.5px solid #1A1714;border-radius:13px 10px 14px 9px / 9px 14px 10px 13px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:15px;letter-spacing:0.2px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">About</a>
-        <a href="#work" data-target="work" style="display:flex;align-items:center;justify-content:center;width:158px;height:40px;border:1.5px solid #1A1714;border-radius:10px 14px 9px 13px / 13px 9px 14px 10px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:15px;letter-spacing:0.2px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Work</a>
-        <a href="#contact" data-target="contact" style="display:flex;align-items:center;justify-content:center;width:158px;height:40px;border:1.5px solid #1A1714;border-radius:14px 9px 13px 10px / 10px 13px 9px 14px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:15px;letter-spacing:0.2px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Contact</a>
-      </nav>
-      <button id="navToggle" aria-expanded="false" class="nav-hamburger" aria-label="Open menu" style="width:42px;height:42px;border:1.5px solid #1A1714;border-radius:11px 9px 12px 8px / 8px 12px 9px 11px;background:transparent;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0;">
-        <span style="width:18px;height:1.6px;background:#1A1714;display:block;"></span>
-        <span style="width:18px;height:1.6px;background:#1A1714;display:block;"></span>
-        <span style="width:18px;height:1.6px;background:#1A1714;display:block;"></span>
-      </button>
+<main id="top">
+
+  <!-- ===== hero ===== -->
+  <div class="hero no-cube" id="hero">
+    <div class="hero-copy">
+      <div class="kicker">Marketing &middot; Strategy</div>
+      <h1>Rudranil<br>Dutta</h1>
+      <p class="tagline">Strategy backed, customer obsessed.</p>
+      <div class="hero-rule"></div>
+      <p class="hero-intro">Six pieces of work: research, campaigns, media plans, branded content and CRM. Each one shows the thinking, not just the outcome.</p>
     </div>
-    
-      <nav id="mobileNav" style="display:none;flex-direction:column;gap:10px;padding-top:16px;">
-        <a href="#about" data-target="about" style="display:flex;align-items:center;justify-content:center;height:44px;border:1.5px solid #1A1714;border-radius:13px 10px 14px 9px / 9px 14px 10px 13px;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:16px;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">About</a>
-        <a href="#work" data-target="work" style="display:flex;align-items:center;justify-content:center;height:44px;border:1.5px solid #1A1714;border-radius:10px 14px 9px 13px / 13px 9px 14px 10px;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:16px;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Work</a>
-        <a href="#contact" data-target="contact" style="display:flex;align-items:center;justify-content:center;height:44px;border:1.5px solid #1A1714;border-radius:14px 9px 13px 10px / 10px 13px 9px 14px;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:16px;text-decoration:none;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Contact</a>
-      </nav>
-    
-  </header>
-
-  <!-- hero -->
-  <section>
-    <div style="position:relative;width:100%;">
-      <img src="assets/hero-banner.webp" alt="Watercolour banner of a man moving a colourful queen forward across a chessboard, with empty ivory paper on the right" style="display:block;width:100%;height:auto;"/>
-      <div style="position:absolute;top:0;right:0;height:100%;width:46%;display:flex;flex-direction:column;justify-content:center;padding:0 clamp(12px,3.6vw,52px) 0 4px;z-index:2;">
-        <h1 class="hero-name" style="margin:0;font-family:'Playfair Display',serif;font-weight:800;line-height:1.03;letter-spacing:-0.5px;">Rudranil Dutta</h1>
-        <p class="hero-tag" style="margin:clamp(7px,1.4vw,16px) 0 0;font-family:'Libre Caslon Text',serif;font-style:italic;line-height:1.34;color:rgba(26,23,20,0.78);">Strategy backed, Customer Obsessed</p>
-      </div>
+    <div class="stage-wrap">
+      <div class="hero-stage" id="cubeStage" aria-hidden="true"></div>
+      <div class="cube-caption" id="cubeCaption"></div>
+      <div class="cube-hint" id="cubeHint">Drag to turn &middot; click a face to open it</div>
     </div>
-  </section>
+    <div class="scroll-cue">Scroll</div>
+  </div>
 
-  <!-- about -->
-  <section data-sec="about" style="padding:clamp(46px,6vw,74px) clamp(22px,6vw,64px);border-top:1px solid rgba(26,23,20,0.85);">
-    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:4px;color:rgba(26,23,20,0.6);margin-bottom:clamp(24px,3vw,34px);">ABOUT</div>
-    <div class="about-row">
-      <div style="flex:0 0 auto;width:clamp(134px,15vw,172px);height:clamp(134px,15vw,172px);border-radius:50%;overflow:hidden;border:1.5px solid #1A1714;">
-        <img src="assets/headshot.webp" alt="Portrait of Rudranil Dutta" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;"/>
-      </div>
-      <p style="margin:0;max-width:660px;font-family:'Libre Caslon Text',serif;font-size:clamp(17px,1.9vw,19px);line-height:1.72;">
-        <span style="float:left;font-family:'Playfair Display',serif;font-size:clamp(58px,7vw,72px);line-height:0.72;font-weight:700;padding:8px 12px 0 0;">M</span>BA in Marketing &amp; Communications, with 4+ years in risk analysis behind me, where I got rather good at using data, consumer insight and cross-functional collaboration to steer business decisions. I'm now bringing those strengths to marketing, applying the same structured thinking to strategy, campaign direction and brand positioning. A curious, diligent and quick study, I work data-first and consumer-centric, and I adapt fast, roll up my sleeves, and deliver marketing that actually moves the numbers.
-      </p>
+  <hr class="rule">
+
+  <!-- ===== about ===== -->
+  <section id="about">
+    <div class="sec-head">
+      <span class="kicker">About</span>
+      <h2>Who you&rsquo;d be hiring</h2>
+    </div>
+    <div class="about-grid">
+    <div class="portrait">
+      <img src="assets/headshot.webp" alt="Portrait of Rudranil Dutta" width="1106" height="1422">
+    </div>
+    <p class="about-body">MBA in Marketing &amp; Communications, with 4+ years in risk analysis behind me, where I got rather good at using data, consumer insight and cross-functional collaboration to steer business decisions. I&rsquo;m now bringing those strengths to marketing, applying the same structured thinking to strategy, campaign direction and brand positioning. A curious, diligent and quick study, I work data-first and consumer-centric, and I adapt fast, roll up my sleeves, and deliver marketing that actually moves the numbers.</p>
     </div>
   </section>
 
-  <!-- work -->
-  <section data-sec="work" style="padding:clamp(42px,5vw,64px) clamp(22px,6vw,64px) clamp(56px,7vw,76px);border-top:1px solid rgba(26,23,20,0.85);">
-    <div style="display:flex;align-items:center;gap:clamp(16px,3vw,26px);margin-bottom:clamp(34px,5vw,50px);">
-      <div style="flex:1;height:1px;background:rgba(26,23,20,0.85);"></div>
-      <h2 style="margin:0;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(26px,4vw,36px);white-space:nowrap;">Selected Work</h2>
-      <div style="flex:1;height:1px;background:rgba(26,23,20,0.85);"></div>
+  <hr class="rule">
+
+  <!-- ===== work ===== -->
+  <section id="work">
+    <div class="sec-head">
+      <!-- a real h2: without it the six case titles hang under About in the heading outline -->
+      <h2 class="kicker">Selected work</h2>
     </div>
-    <div class="work-grid">
-      <a class="work-card" href="Regional-Palate-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
-  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
-    <img src="assets/cs-fmcg.webp" alt="Watercolour of a hand straining a colander of numbers into falling binary" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-  </div>
-  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">FMCG Research</div>
-  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">What a regional palate really wants.</div>
-  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">RESEARCH &amp; INSIGHT</div>
-</a>
-<a class="work-card" href="Ramayana-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
-  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
-    <img src="assets/cs-ramayana.webp" alt="Watercolour illustration for the Ramayana campaign" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-  </div>
-  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Ramayana</div>
-  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">Marketing India's greatest epic.</div>
-  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">CAMPAIGN &amp; MEDIA</div>
-</a>
-<a class="work-card" href="Comet-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
-  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
-    <img src="assets/cs-comet.webp" alt="Watercolour illustration of the Comet shoe campaign" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-  </div>
-  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Comet</div>
-  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">A year's media plan for a shoe.</div>
-  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">PERFORMANCE</div>
-</a>
-<a class="work-card" href="Absolut-Truth-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
-  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
-    <img src="assets/cs-absolut.webp" alt="Watercolour illustration for Absolut branded content" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-  </div>
-  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Absolut Truth</div>
-  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">The sell, hidden in the story.</div>
-  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">BRANDED CONTENT</div>
-</a>
-<a class="work-card" href="Crumbrella-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
-  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
-    <img src="assets/cs-crumbrella.webp" alt="Watercolour illustration of the Crumbrella concept" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-  </div>
-  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">Crumbrella</div>
-  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">One order, two people to win.</div>
-  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">EMAIL &amp; CRM</div>
-</a>
-<a class="work-card" href="District-Plot-Case-Study.html" style="display:flex;flex-direction:column;text-decoration:none;color:#1A1714;transition:transform .35s ease;">
-  <div style="width:100%;aspect-ratio:1 / 1;overflow:hidden;border:1px solid rgba(26,23,20,0.22);background:#FDF7E7;">
-    <img src="assets/cs-district.webp" alt="Watercolour illustration for District: The Plot" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"/>
-  </div>
-  <div style="margin-top:16px;font-family:'Playfair Display',serif;font-size:clamp(23px,2.6vw,24px);font-weight:600;">District: The Plot</div>
-  <div style="margin-top:5px;font-family:'Libre Caslon Text',serif;font-style:italic;font-size:16px;color:rgba(26,23,20,0.75);">Changing habits, not fighting them.</div>
-  <div style="margin-top:12px;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;letter-spacing:2px;color:rgba(26,23,20,0.65);">PRODUCT THINKING</div>
-</a>
+
+    <div class="work-rows">
+
+      <a class="row" href="Regional-Palate-Case-Study.html">
+        <div class="row-art">
+          <img src="assets/art/fmcg.webp" alt="Impasto oil painting: a hand tilts a colander of glowing numerals, binary digits draining through its holes into the dark." loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="row-meta">
+          <h3 class="row-title">FMCG Research</h3>
+          <div class="row-tag">Research &amp; Insight</div>
+          <p class="row-dek">What a regional palate really wants.</p>
+          <span class="row-cta">Read the case</span>
+        </div>
+      </a>
+
+      <a class="row" href="Ramayana-Case-Study.html">
+        <div class="row-art">
+          <img src="assets/art/ramayana.webp" alt="Impasto oil painting: Rama, blue-skinned and holding a golden bow, faces the crowned Ravana across a dark field, gold catching the light." loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="row-meta">
+          <h3 class="row-title">Ramayana</h3>
+          <div class="row-tag">Campaign &amp; Media</div>
+          <p class="row-dek">Marketing India&rsquo;s greatest epic.</p>
+          <span class="row-cta">Read the case</span>
+        </div>
+      </a>
+
+      <a class="row" href="Comet-Case-Study.html">
+        <div class="row-art">
+          <img src="assets/art/comet.webp" alt="Impasto oil painting: the Comet wordmark and its four-pointed star rendered in thick gold leaf on near-black." loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="row-meta">
+          <h3 class="row-title">Comet</h3>
+          <div class="row-tag">Performance</div>
+          <p class="row-dek">A year&rsquo;s media plan for a shoe.</p>
+          <span class="row-cta">Read the case</span>
+        </div>
+      </a>
+
+      <a class="row" href="Absolut-Truth-Case-Study.html">
+        <div class="row-art">
+          <img src="assets/art/absolut.webp" alt="Impasto oil painting: a silhouetted talk-show host at a desk, framed by the glowing outline of a giant vodka bottle." loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="row-meta">
+          <h3 class="row-title">Absolut Truth</h3>
+          <div class="row-tag">Branded Content</div>
+          <p class="row-dek">The sell, hidden in the story.</p>
+          <span class="row-cta">Read the case</span>
+        </div>
+      </a>
+
+      <a class="row" href="Crumbrella-Case-Study.html">
+        <div class="row-art">
+          <img src="assets/art/crumbrella.webp" alt="Impasto oil painting: a pale envelope marked with an at symbol, cupcakes spilling from it across a dark table." loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="row-meta">
+          <h3 class="row-title">Crumbrella</h3>
+          <div class="row-tag">Email &amp; CRM</div>
+          <p class="row-dek">One order, two people to win.</p>
+          <span class="row-cta">Read the case</span>
+        </div>
+      </a>
+
+      <a class="row" href="District-Plot-Case-Study.html">
+        <div class="row-art">
+          <img src="assets/art/district.webp" alt="Impasto oil painting: the District by Zomato wordmark inside a diamond, in cream on deep violet fading to black." loading="lazy" width="1600" height="1067">
+        </div>
+        <div class="row-meta">
+          <h3 class="row-title">District: The Plot</h3>
+          <div class="row-tag">Product Thinking</div>
+          <p class="row-dek">Changing habits, not fighting them.</p>
+          <span class="row-cta">Read the case</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- contact -->
-  <section data-sec="contact" style="padding:clamp(50px,7vw,76px) clamp(22px,6vw,64px);border-top:1px solid rgba(26,23,20,0.85);text-align:center;">
-    <h2 style="margin:0 0 clamp(28px,4vw,36px);font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(28px,4vw,34px);">Get in touch</h2>
-    <div style="display:flex;gap:clamp(14px,2vw,22px);justify-content:center;flex-wrap:wrap;">
-      <a href="mailto:rudranil06@gmail.com" style="display:flex;align-items:center;justify-content:center;width:188px;max-width:100%;height:52px;border:1.5px solid #1A1714;border-radius:14px 10px 13px 9px / 9px 13px 10px 14px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:17px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Email me</a>
-      <a href="Rudranil-Dutta-CV.pdf" download target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;width:188px;max-width:100%;height:52px;border:1.5px solid #1A1714;border-radius:9px 13px 10px 14px / 14px 10px 13px 9px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:17px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Download CV</a>
+  <hr class="rule">
+
+  <!-- ===== contact ===== -->
+  <section id="contact" class="contact">
+    <div class="sec-head" style="justify-content:center;">
+      <span class="kicker">Contact</span>
+    </div>
+    <h2>Get in touch</h2>
+    <div class="btns">
+      <a class="btn" href="mailto:rudranil06@gmail.com">Email me</a>
+      <a class="btn" href="Rudranil-Dutta-CV.pdf" download target="_blank" rel="noopener">Download CV</a>
     </div>
   </section>
 
-  <!-- footer -->
-  <footer style="padding:30px;border-top:1px solid rgba(26,23,20,0.85);text-align:center;">
-    <div style="font-family:'Libre Caslon Text',serif;font-style:italic;font-size:14px;color:rgba(26,23,20,0.7);">&copy; Rudranil Dutta 2026</div>
-  </footer>
+</main>
 
-</div>
-<script src="assets/site.js"></script>
-<script src="assets/home.js"></script>
+<footer>
+  <p>&copy; Rudranil Dutta 2026</p>
+</footer>
+
+<script type="module">
+/* The cube is delight, never load-bearing. This gate decides who gets it.
+   Everyone else keeps a hero of pure type, and the six cases are six links below. */
+(async () => {
+  const hero = document.getElementById('hero');
+  const stage = document.getElementById('cubeStage');
+  if (!hero || !stage) return;
+
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const narrow  = matchMedia('(max-width: 900px)').matches;
+  const thin    = (navigator.hardwareConcurrency || 8) < 4;
+  const saveData = navigator.connection && navigator.connection.saveData;
+
+  let webgl = false;
+  try {
+    const c = document.createElement('canvas');
+    webgl = !!(c.getContext('webgl2') || c.getContext('webgl'));
+  } catch (e) { webgl = false; }
+
+  if (reduced || narrow || thin || saveData || !webgl) return;   // three.js is never even fetched
+
+  try {
+    const { mountCube } = await import('./assets/cube.js');
+    // reveal the stage BEFORE mounting, or the cube measures a hidden, zero-size box
+    hero.classList.remove('no-cube');
+    // The stage stays aria-hidden on purpose. The cube is a mouse-only delight with no keyboard
+    // path; exposing an empty canvas to a screen reader would be noise, not access. Every case it
+    // opens is a real link in the work rows below, which is the accessible route.
+    await mountCube(stage, { caption: document.getElementById('cubeCaption') });
+  } catch (err) {
+    console.warn('Cube did not load; hero stays as type.', err);
+    hero.classList.add('no-cube');
+    stage.setAttribute('aria-hidden', 'true');
+  }
+})();
+</script>
+
 </body>
 </html>

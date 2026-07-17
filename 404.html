@@ -3,43 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found · Rudranil Dutta</title>
-<meta name="description" content="That page could not be found.">
-<meta name="theme-color" content="#FBF8F0">
+<title>Page not found &middot; Rudranil Dutta</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0A09">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&family=Libre+Caslon+Text:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Caslon+Text:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/case.css">
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { background: #FBF8F0; color: #1A1714; font-family: 'Libre Caslon Text', Georgia, serif; min-height: 100vh; }
+  .nf{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 22px;gap:0;}
+  .nf-code{font-family:var(--mono);font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-lit);}
+  .nf-num{font-family:var(--display);font-weight:600;font-size:clamp(90px,18vw,190px);line-height:.9;color:var(--ivory);margin:18px 0 0;letter-spacing:-.02em;}
+  .nf-rule{width:64px;height:1px;background:var(--gold);margin:30px 0;}
+  .nf-say{font-family:var(--body);font-style:italic;font-size:clamp(17px,2.3vw,21px);color:rgba(240,230,210,.66);margin:0;max-width:34ch;line-height:1.55;}
+  .nf-btn{
+    margin-top:34px;font-family:var(--mono);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;
+    text-decoration:none;color:var(--gold-lit);border:1px solid rgba(201,162,75,.55);
+    padding:16px 30px;border-radius:3px;transition:background .35s ease,color .35s ease,border-color .35s ease;
+  }
+  .nf-btn:hover{background:var(--gold);color:var(--obsidian);border-color:var(--gold);}
 </style>
 </head>
 <body>
-<div style="min-height:100vh;display:flex;flex-direction:column;">
-  <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden;" aria-hidden="true" focusable="false">
-    <defs>
-      <filter id="inkFill" x="-70%" y="-70%" width="240%" height="240%" color-interpolation-filters="sRGB">
-        <feTurbulence type="fractalNoise" baseFrequency="0.014 0.019" numOctaves="4" seed="11" stitchTiles="stitch" result="noise"></feTurbulence>
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="46" xChannelSelector="R" yChannelSelector="G" result="disp"></feDisplacementMap>
-        <feGaussianBlur in="disp" stdDeviation="0.5"></feGaussianBlur>
-      </filter>
-    </defs>
-  </svg>
-  <header style="border-bottom:1px solid rgba(26,23,20,0.85);padding:16px clamp(20px,5vw,54px);">
-    <a href="index.html" style="font-family:'Playfair Display',serif;font-size:clamp(18px,2.4vw,22px);font-weight:700;color:#1A1714;text-decoration:none;">Marketing Portfolio</a>
-  </header>
-  <main style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(40px,8vw,90px) 24px;">
-    <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:4px;color:rgba(26,23,20,0.6);">ERROR 404</div>
-    <h1 style="font-family:'Playfair Display',serif;font-weight:800;font-size:clamp(56px,14vw,120px);line-height:1;margin:10px 0 0;">404</h1>
-    <p style="font-family:'Libre Caslon Text',serif;font-style:italic;font-size:clamp(17px,2.4vw,21px);color:rgba(26,23,20,0.78);margin:14px 0 0;max-width:460px;">This page has wandered off the board. Let us get you back to the work.</p>
-    <a href="index.html" style="margin-top:30px;display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 30px;border:1.5px solid #1A1714;border-radius:14px 10px 13px 9px / 9px 13px 10px 14px;background:radial-gradient(circle at 50% 50%,#1A1714 0%,#1A1714 74%,rgba(26,23,20,0.4) 90%,rgba(26,23,20,0) 100%) no-repeat center / 0% 0%;color:#1A1714;font-family:'Libre Caslon Text',serif;font-size:17px;text-decoration:none;cursor:pointer;transition:background-size .55s cubic-bezier(.34,.1,.2,1),color .38s ease;">Back to the portfolio</a>
-  </main>
-  <footer style="padding:30px;border-top:1px solid rgba(26,23,20,0.85);text-align:center;">
-    <div style="font-family:'Libre Caslon Text',serif;font-style:italic;font-size:14px;color:rgba(26,23,20,0.7);">&copy; Rudranil Dutta 2026</div>
-  </footer>
-</div>
-<script src="assets/site.js"></script>
+<main class="nf">
+  <div class="nf-code">Error 404</div>
+  <div class="nf-num">404</div>
+  <div class="nf-rule"></div>
+  <p class="nf-say">This one won&rsquo;t solve. Let&rsquo;s get you back to the work.</p>
+  <a class="nf-btn" href="index.html">Back to the portfolio</a>
+</main>
 </body>
 </html>

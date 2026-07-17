@@ -38,11 +38,11 @@
     var op = [0, 0.22, 0.5, 0.82];
     var h = '<div style="display:grid;grid-template-columns:172px repeat(12,1fr);gap:2px;align-items:center">';
     h += '<div></div>';
-    mo.forEach(function (m) { h += '<div style="text-align:center;font-size:10px;color:rgba(26,23,20,0.55)">' + m + '</div>'; });
+    mo.forEach(function (m) { h += '<div style="text-align:center;font-size:10px;color:rgba(240,230,210,0.6)">' + m + '</div>'; });
     ch.forEach(function (r) {
-      h += '<div style="font-size:11px;color:#1A1714;padding-right:6px;text-align:right;white-space:nowrap">' + r[0] + '</div>';
+      h += '<div style="font-size:11px;color:#F0E6D2;padding-right:6px;text-align:right;white-space:nowrap">' + r[0] + '</div>';
       r[1].forEach(function (v) {
-        var bg = v === 0 ? 'rgba(26,23,20,0.06)' : 'rgba(26,23,20,' + op[v] + ')';
+        var bg = v === 0 ? 'rgba(201,162,75,0.07)' : 'rgba(201,162,75,' + op[v] + ')';
         h += '<div style="height:20px;border-radius:4px;background:' + bg + '"></div>';
       });
     });
